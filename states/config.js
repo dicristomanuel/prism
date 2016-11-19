@@ -1,11 +1,8 @@
 import { OnInit, OnBot, OffBot, OnMs, OffMs } from './all';
-import Chat from '../../db/chat';
 
 const onUpdate = (data) => {
-  return Chat.update(data.chat, { state: data.state })
-  .then((chat) => {
-    return { ...data, chat };
-  });
+    console.log('onUpdate >> ', data);
+    return data;
 }
 
 export default [
