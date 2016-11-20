@@ -9,5 +9,5 @@ export default [
   { from: 'init', to: 'init', on: OnInit, off: null },
   { from: 'bot',  to: 'bot',  on: OnBot,  off: OffBot },
   { from: 'ms',   to: 'ms',   on: OnMs,   off: OffMs },
-  { onUpdate }
+  { onUpdate },
 ];

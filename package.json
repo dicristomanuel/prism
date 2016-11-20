@@ -1,11 +1,11 @@
 {
-  "name": "raise-facebook-messenger-poc",
+  "name": "Prism",
   "version": "1.0.0",
   "description": "Prism - will explain",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node ./index.js",
-    "debug": "babel-node debug ./index.js",
+    "start": "nodemon --exec babel-node ./example/index.js",
+    "debug": "babel-node debug ./example/index.js",
     "test": "babel-node test.js"
   },
   "author": "",
