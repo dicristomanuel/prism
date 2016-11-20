@@ -11,3 +11,21 @@ export default [
   { from: 'ms',   to: 'ms',   on: OnMs,   off: OffMs },
   { onUpdate },
 ];
+
+const first =  [ 'init', 'init', OnInit, null ];
+const second = [ 'bot', 'bot', OnBot, OffBot ];
+const third =  [ 'ms', 'ms', OnMs, OffMs ];
+
+const buildStates = (args) => {
+  console.log(args.length);
+  let states = [];
+
+  for(let i = 0; i <= 3; i++) {
+    let state = {
+
+    };
+    states.push(state);
+  }
+}
+
+buildStates(first, second, third);

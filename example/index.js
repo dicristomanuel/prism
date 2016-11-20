@@ -1,4 +1,4 @@
-import Prism from '../src/prism';
+import Prism from '../lib/prism';
 import config from './states/config';
 
 const prism = new Prism();
