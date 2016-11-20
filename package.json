@@ -1,23 +1,22 @@
 {
-  "name": "Prism",
-  "version": "1.0.0",
-  "description": "Prism - will explain",
-  "main": "index.js",
+  "name": "prism-state",
+  "version": "1.0.5",
+  "description": "Prism finite state machine.",
+  "main": "./lib/prism.js",
+  "repository": "https://github.com/dicristomanuel/prism",
   "scripts": {
-    "build": "babel --plugins transform-class-properties ./lib/prism.js --out-dir src",
-    "start": "nodemon --exec babel-node ./example/index.js",
-    "debug": "babel-node debug ./example/index.js",
-    "test": "babel-node test.js"
+    "build": "babel --plugins transform-class-properties -d lib/ src/",
+    "prepublish": "npm run build"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Manuel Di Cristo <dicristomanuel@icloud.com>",
+  "license": "GNU",
   "dependencies": {
-    "babel-cli": "~6.5.1",
-    "babel-core": "^6.8.0",
     "babel-plugin-transform-class-properties": "^6.19.0",
     "babel-plugin-transform-es2015-destructuring": "^6.8.0",
     "babel-preset-es2015": "~6.5.0",
     "babel-preset-stage-1": "~6.5.0",
-    "nodemon": "^1.9.2"
+    "babel-cli": "~6.5.1",
+    "babel-core": "^6.8.0"
+
   }
 }
