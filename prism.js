@@ -1,14 +1,13 @@
-export default {
-  create: function(states) {
+class Prism {
+  create(states) {
     states.forEach(this.addState, this);
-  },
+  }
 
-  next: function(data) {
-    debugger;
+  next(data) {
     this.nextState.forEach(this.findNextState(data), this);
-  },
+  }
 
-  addState: function(state) {
+  addState(state) {
     if (state.onUpdate) {
       this['onUpdate'] = function(data) {
         return new Promise((resolve, reject) => {
@@ -19,13 +18,11 @@ export default {
       let parent = this;
       this[state.to] = {
         on: function(data) {
-          debugger;
           return new Promise((resolve, reject) => {
             data ? resolve(state.on(data)) : reject('PRISM: missing data or state');
           });
         },
         off: function(data) {
-          debugger;
           return new Promise((resolve, reject) => {
             if (!data.state) reject('PRISM: missing data or state');
             else if (state.from === data.state) resolve(state.off(data));
@@ -37,26 +34,26 @@ export default {
       }
       this.nextState.push({current: state.from, next: state.to});
     }
-  },
+  }
 
-  callState: function(data) {
-    debugger;
+  callState(data) {
     this[data.state].on(data)
     .then(this[data.state].off)
     .catch(function(error) {
-      console.log(`>>>> ${error} <<<<`);
+      console.log(`Prism ERROR: ${error.stack}`);
     });
-  },
+  }
 
-  findNextState: function(data) {
+  findNextState(data) {
     return function(state) {
-      debugger;
       if (data.state === state.current) {
         if (this.onUpdate) this.onUpdate({ ...data, state: state.next });
         return this.callState({ ...data, state: state.next });
       }
     }
-  },
+  }
 
-  nextState: [],
+  nextState = []
 }
+
+export default Prism;

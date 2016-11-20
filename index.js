@@ -2,7 +2,8 @@ import Prism from './prism';
 import config from './states/config';
 
 console.log('in index.js');
+const prism = new Prism();
+debugger;
+prism.create(config);
 
-Prism.create(config);
-
-Prism.next({state: 'init'});
+prism.next({state: 'init'});
