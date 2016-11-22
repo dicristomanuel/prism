@@ -1,6 +1,6 @@
 {
   "name": "prism-state",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Prism finite state machine.",
   "main": "./lib/prism.js",
   "repository": "https://github.com/dicristomanuel/prism",
