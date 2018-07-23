@@ -1,1 +1,3 @@
-### Work in progress
+### PRISM
+
+Finite state machine
